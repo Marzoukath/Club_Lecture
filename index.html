@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accueil - Club de Lecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#c9731d",
+                "background-light": "#f8f7f6",
+                "background-dark": "#211911",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+              },
+              borderRadius: {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+            },
+          },
+        }
+      </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e; 
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b140e] dark:text-[#f3ede8] font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full bg-[#fbfaf8]/90 dark:bg-[#211911]/90 backdrop-blur-md border-b border-[#e6dbd1] dark:border-[#3a2e23]">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">local_library</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-[#1b140e] dark:text-white">Club de Lecture</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="accueil.html">Accueil</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="proposclub.html">À propos</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="event.html">Événements</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="devenir_membre.html">Adhésion</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition-all shadow-sm">
+                    Rejoindre
+                </button>
+<button class="md:hidden text-[#1b140e] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full">
+<!-- Hero Section -->
+<section class="relative w-full">
+<div class="px-4 py-6 md:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="relative overflow-hidden rounded-2xl min-h-[560px] flex items-center justify-center text-center bg-cover bg-center shadow-xl group" data-alt="Cozy reading nook with warm lighting and books" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1Ea-rGGi-JrZHYo89_bE3zIygFQvj2A-PIjs8WI6nLcVJrLZklCQM6Lu0ogJb08rUqaOE-Vya8U9SmorbEsnTNwlNYBQPUfP0y5nhLnG01zdMvJ716_cQv_CHo3tpvWbzwguYYSZQNbVdJmkLjqRwAd6JGc3YN4q58ch3xsGkYA5FmPk2znCesjf30LcfR_ieN5-QPELpWDplWJVFVNMHNI2t9sVvPecJvWsU9bEX9noCbrmKe4QnkpOWg8X9kwDAFGy-blJVddI');">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col items-center gap-6 max-w-3xl px-6 animate-fade-in-up">
+<span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold uppercase tracking-wider mb-2">
+                            Bienvenue aux bibliophiles
+                        </span>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight text-shadow">
+                            Partagez votre passion pour la lecture
+                        </h1>
+<p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl text-shadow">
+                            Un espace chaleureux conçu pour connecter les esprits curieux à travers les pages. Découvrez, échangez et grandissez avec nous.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button onclick="window.location.href='devenir_membre.html'" class="bg-primary hover:bg-[#b06316] text-white text-base font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                                Devenir membre
+                            </button>
+<button onclick="window.location.href='event.html'" class="bg-white/90 hover:bg-white text-[#1b140e] text-base font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all backdrop-blur-sm">
+                                Découvrir nos événements
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="py-16 px-4 md:px-8 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="flex flex-col gap-4 text-center items-center">
+<h2 class="text-[#1b140e] dark:text-white text-3xl md:text-4xl font-bold tracking-tight">
+                        Objectifs et valeurs
+                    </h2>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] text-lg font-light leading-relaxed max-w-2xl">
+                        Notre mission est de créer une communauté inclusive où la passion pour la littérature rassemble les gens, transcendant les genres et les frontières.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-4 p-8 rounded-xl bg-white dark:bg-[#2a221b] border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">diversity_3</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#1b140e] dark:text-white text-xl font-bold">Communauté</h3>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] leading-relaxed">
+                                Un lieu refuge pour rencontrer des passionnés, échanger des recommandations et tisser des liens durables.
+                            </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-4 p-8 rounded-xl bg-white dark:bg-[#2a221b] border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">explore</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#1b140e] dark:text-white text-xl font-bold">Découverte</h3>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] leading-relaxed">
+                                Sortez de votre zone de confort littéraire et explorez de nouveaux horizons avec notre sélection mensuelle.
+                            </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-4 p-8 rounded-xl bg-white dark:bg-[#2a221b] border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">forum</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#1b140e] dark:text-white text-xl font-bold">Échange</h3>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] leading-relaxed">
+                                Partager des idées, débattre des thèmes et enrichir votre compréhension dans un cadre respectueux et ouvert.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News & Events Section -->
+<section class="py-16 px-4 md:px-8 bg-[#f3ede8] dark:bg-[#1a140e]">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-[#1b140e] dark:text-white text-2xl md:text-3xl font-bold tracking-tight">
+                        Dernières nouvelles et événements
+                    </h2>
+<a class="hidden sm:flex items-center text-primary font-bold hover:underline gap-1 text-sm" href="#">
+                        Voir tout <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Featured Event (Large) -->
+<div class="flex flex-col md:flex-row bg-white dark:bg-[#2a221b] rounded-xl overflow-hidden shadow-sm border border-[#e6dbd1] dark:border-[#3a2e23] hover:shadow-lg transition-all duration-300 group">
+<div class="w-full md:w-2/5 h-64 md:h-auto bg-cover bg-center relative" data-alt="Book open on a table with coffee" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtokdFiPX39KYRm2fnCKx7toZ7vN3wG5Nl5Fb3BTXLaW4KcPoYqiUAhctO1Sx3cGK0jwiNP6QaNXchCe6UESSJS5snrS1LjbP8Tlz1hkdbpzsvBq8lWEaRNNhxUn2vfzaNid__8jVjgevzE0vcDtAzJoU5GXhuH8bAABO4a5lZ2QpzwixYUh6Qs9de4MCvi39uoV5R1nNGHE60oLgGOMlYuCtjSwAP84s1CPHJhHPskFyA4hvgitWoeTDAIHeqvm3U0w9YsF7bbjY');">
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                À la une
+                             </div>
+</div>
+<div class="flex flex-col p-6 justify-center w-full md:w-3/5">
+<div class="flex items-center gap-2 text-[#957350] text-sm font-medium mb-2">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                                15 Juin à 19h00
+                            </div>
+<h3 class="text-[#1b140e] dark:text-white text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                                Discussion: Gatsby le Magnifique
+                            </h3>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] text-sm mb-6 line-clamp-3">
+                                Rejoignez-nous pour redécouvrir ce classique de la littérature américaine autour d'un café. Nous explorerons les thèmes de la décadence, de l'idéalisme et des excès des années folles.
+                            </p>
+<button class="self-start text-primary text-sm font-bold border border-primary/30 hover:bg-primary hover:text-white px-4 py-2 rounded transition-colors">
+                                S'inscrire
+                            </button>
+</div>
+</div>
+<!-- Side Grid for Smaller Items -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+<!-- Small Card 1 -->
+<div class="bg-white dark:bg-[#2a221b] p-5 rounded-xl border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-[#fdf6ec] dark:bg-primary/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<h4 class="text-[#1b140e] dark:text-white font-bold text-lg mb-2">Atelier d'écriture</h4>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] text-sm line-clamp-2">
+                                    Débloquez votre créativité avec notre atelier mensuel guidé par des auteurs locaux.
+                                </p>
+</div>
+<div class="mt-4 pt-4 border-t border-[#f3ede8] dark:border-[#3a2e23] flex justify-between items-center">
+<span class="text-xs text-[#957350]">22 Juin</span>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Détails</a>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="bg-white dark:bg-[#2a221b] p-5 rounded-xl border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-[#fdf6ec] dark:bg-primary/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h4 class="text-[#1b140e] dark:text-white font-bold text-lg mb-2">Top 10 de l'Été</h4>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] text-sm line-clamp-2">
+                                    Découvrez notre sélection curée des meilleurs romans à emporter à la plage.
+                                </p>
+</div>
+<div class="mt-4 pt-4 border-t border-[#f3ede8] dark:border-[#3a2e23] flex justify-between items-center">
+<span class="text-xs text-[#957350]">Article</span>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Lire</a>
+</div>
+</div>
+<!-- Small Card 3 -->
+<div class="bg-white dark:bg-[#2a221b] p-5 rounded-xl border border-[#e6dbd1] dark:border-[#3a2e23] shadow-sm hover:shadow-md transition-all flex flex-col justify-between sm:col-span-2">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded bg-cover bg-center shrink-0" data-alt="Abstract architectural shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdTkk4UhbR99sLFgBY52V6fP7j6U1Pje_JSlB_d3amfMa3-FyTeD6d6vy6mt_pOGhRlDAyjDwZT7yUie0vFwHFEyEOuxBZWoUo4iidTBLNOrqX5S4xTUzr0Fa5QVw6qdQMglIHBfX2z7ZCqiDmow50kdy7IVqij-yasPYN7cZIrBgzw38xOUSAfX6UnphKVowr3KQwNApF5Vxr5OsIe27srMNnFKQFdl2ZkPdd4iejCb3n9FaOuTS8V1-lQgpnDgXfV9mb5ZZOWos');"></div>
+<div>
+<h4 class="text-[#1b140e] dark:text-white font-bold text-base">Rencontre avec l'auteur : Marc Levy</h4>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] text-sm mt-1">
+                                         Une soirée exclusive pour les membres Gold. Places limitées.
+                                     </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center sm:hidden">
+<button class="w-full bg-white border border-[#e6dbd1] text-primary font-bold py-3 rounded-lg shadow-sm">
+                        Voir tous les événements
+                    </button>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA Section -->
+<section class="py-20 px-4 bg-white dark:bg-[#211911] border-t border-[#f3ede8] dark:border-[#3a2e23]">
+<div class="max-w-3xl mx-auto text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">mail</span>
+<h2 class="text-3xl font-bold text-[#1b140e] dark:text-white mb-4">Restez à la page</h2>
+<p class="text-[#5c4a3d] dark:text-[#a89c94] mb-8">
+                    Inscrivez-vous à notre newsletter pour recevoir les dernières nouvelles littéraires, les annonces d'événements et des recommandations exclusives.
+                </p>
+<form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+<input class="flex-1 px-4 py-3 rounded-lg border border-[#e6dbd1] bg-[#fbfaf8] focus:outline-none focus:ring-2 focus:ring-primary/50 text-[#1b140e]" placeholder="Votre adresse email" type="email"/>
+<button class="bg-primary hover:bg-[#b06316] text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md" type="button">
+                        S'abonner
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f8f5f2] dark:bg-[#1a140e] pt-16 pb-8 border-t border-[#e6dbd1] dark:border-[#3a2e23]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">local_library</span>
+<span class="text-lg font-bold text-[#1b140e] dark:text-white">Club de Lecture</span>
+</div>
+<p class="text-sm text-[#5c4a3d] dark:text-[#a89c94]">
+                        Cultiver la passion de la lecture, une page à la fois. Rejoignez notre communauté grandissante.
+                    </p>
+<div class="flex gap-4 mt-2">
+<a class="text-[#957350] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-[#957350] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<!-- Links 1 -->
+<div>
+<h4 class="font-bold text-[#1b140e] dark:text-white mb-4">Explorer</h4>
+<ul class="flex flex-col gap-3 text-sm text-[#5c4a3d] dark:text-[#a89c94]">
+<li><a class="hover:text-primary transition-colors" href="accueil.html">Accueil</a></li>
+<li><a class="hover:text-primary transition-colors" href="proposclub.html">À propos</a></li>
+<li><a class="hover:text-primary transition-colors" href="event.html">Événements</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<!-- Links 2 -->
+<div>
+<h4 class="font-bold text-[#1b140e] dark:text-white mb-4">Communauté</h4>
+<ul class="flex flex-col gap-3 text-sm text-[#5c4a3d] dark:text-[#a89c94]">
+<li><a class="hover:text-primary transition-colors" href="devenir_membre.html">Devenir membre</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Connexion</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="font-bold text-[#1b140e] dark:text-white mb-4">Contact</h4>
+<ul class="flex flex-col gap-3 text-sm text-[#5c4a3d] dark:text-[#a89c94]">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">location_on</span>
+                            123 Avenue des Livres, Paris
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">mail</span>
+                            bonjour@clubdelecture.fr
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">call</span>
+                            +33 1 23 45 67 89
+                        </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-[#e6dbd1] dark:border-[#3a2e23] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#957350]">
+<p>© 2024 Club de Lecture. Tous droits réservés.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Mentions légales</a>
+<a class="hover:text-primary" href="#">Confidentialité</a>
+<a class="hover:text-primary" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
