@@ -34,26 +34,9 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
-<!-- Navbar -->
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 sm:px-10 py-3">
-<div class="flex items-center gap-4 text-slate-900 dark:text-white">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-3xl">menu_book</span>
-</div>
-<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Le Cercle Littéraire</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="accueil.html">Accueil</a>
-<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="proposclub.html">Discussions</a>
-<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="event.html">Livres</a>
-<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="contact.html">Contact</a>
-</nav>
-<button onclick="window.location.href='devenir_membre.html'" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Rejoindre</span>
-</button>
-</div>
-</header>
+<!-- Header will be loaded dynamically -->
+<div id="header-container"></div>
+
 <main class="flex-grow">
 <!-- Hero Section -->
 <div class="layout-container flex justify-center py-5 px-4 sm:px-10">
@@ -261,4 +244,5 @@
 </div>
 </footer>
 </div>
-</body></html>
+<script src="header.js"></script>
+</body>

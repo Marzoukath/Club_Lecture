@@ -42,48 +42,9 @@
     </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-slate-100 font-display transition-colors duration-200">
-<!-- Top Navbar (Modified slightly for theme consistency) -->
-<div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden border-b border-[#f3ede8] dark:border-surface-dark">
-<div class="layout-container flex h-full grow flex-col">
-<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
-<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
-<header class="flex items-center justify-between whitespace-nowrap px-4 py-3">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-text-main dark:text-white">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-4xl">auto_stories</span>
-</div>
-<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Book Club</h2>
-</div>
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="accueil.html">Accueil</a>
-<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Livres</a>
-<a class="text-primary font-bold text-sm leading-normal" href="event.html">Événements</a>
-<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Blog</a>
-<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="proposclub.html">À propos</a>
-</nav>
-</div>
-<div class="flex flex-1 justify-end gap-4 md:gap-8">
-<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
-<div class="text-text-muted flex border-none bg-[#f3ede8] dark:bg-surface-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
-<span class="material-symbols-outlined text-[20px]">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f3ede8] dark:bg-surface-dark focus:border-none h-full placeholder:text-text-muted px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Rechercher..." value=""/>
-</div>
-</label>
-<button onclick="window.location.href='devenir_membre.html'" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Rejoindre</span>
-</button>
-<button class="md:hidden text-text-main dark:text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-</div>
-</div>
-</div>
-</div>
+<!-- Header will be loaded dynamically -->
+<div id="header-container"></div>
+
 <main class="flex flex-col items-center justify-center w-full px-4 md:px-10 lg:px-40 py-8">
 <div class="w-full max-w-[1280px]">
 <!-- Hero Section -->
@@ -432,4 +393,5 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script src="header.js"></script>
+</body>
