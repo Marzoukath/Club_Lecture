@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Devenir Membre - Book Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#c9731d",
+              "background-light": "#fbfaf8", // Warm off-white
+              "background-dark": "#211911",  // Warm dark brown
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"],
+              "body": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "0.75rem", 
+              "xl": "1rem", 
+              "2xl": "1.5rem"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f3ede8] bg-background-light/95 px-6 py-4 backdrop-blur-sm lg:px-10">
+<div class="flex items-center gap-3 text-slate-900">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">menu_book</span>
+</div>
+<h2 class="text-slate-900 text-xl font-bold leading-tight tracking-tight">Book Club</h2>
+</div>
+<div class="hidden flex-1 justify-end gap-8 md:flex">
+<div class="flex items-center gap-8">
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium" href="accueil.html">Accueil</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium" href="event.html">Événements</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium" href="#">Blog</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Connexion</a>
+</div>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 py-2.5 text-white shadow-sm transition-transform hover:scale-105 hover:bg-primary/90 text-sm font-bold">
+<span class="truncate">S'inscrire</span>
+</button>
+</div>
+<button class="md:hidden text-slate-900">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+<!-- Hero & Intro -->
+<div class="mb-12 text-center lg:text-left">
+<span class="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+                        Adhésion ouverte
+                    </span>
+<h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl mb-4">
+                        Rejoignez notre <span class="text-primary">cercle littéraire</span>
+</h1>
+<p class="mx-auto lg:mx-0 max-w-2xl text-lg text-slate-600">
+                        Plongez dans un monde de découvertes et d'échanges passionnants. Devenez membre pour accéder à des contenus exclusifs et rencontrer vos auteurs préférés.
+                    </p>
+</div>
+<div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
+<!-- Left Column: Benefits & Pricing Info -->
+<div class="lg:col-span-7 flex flex-col gap-10">
+<!-- Visual Image -->
+<div class="relative overflow-hidden rounded-2xl aspect-[16/9] w-full bg-slate-200 shadow-md">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cozy reading corner with books and warm lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-yZecPZd30SBwhOMRZ4daEGVp4AYQEzOycANlEx_bguIYOmoR0Ip4eLiA9WV0fuO4CEaaLEh7qfldCTHzwMGbS1JxJlqqoWNotcu18D7w3yhnek6a7ETXfWvQSvDyamARuUd5Umr_ENfrBE5eqgZE4Y-e2Nv1c9myF-n2soutCT_Nj10gsGdn4xy04nfbt_vpFPQwQRRbBahFWPfI53qm476Ef7ykjhA_AT88vbE5zJaZQY9TL5GOs-8iTRO1KCoZ0Bip7vmSTdE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-sm font-medium opacity-90">Communauté de +5000 lecteurs</p>
+<p class="font-bold text-lg">"Une expérience qui a changé ma façon de lire."</p>
+</div>
+</div>
+<!-- Benefits List -->
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">star</span>
+                                Avantages de l'adhésion
+                            </h2>
+<div class="grid gap-4 sm:grid-cols-2">
+<!-- Benefit 1 -->
+<div class="flex items-start gap-4 rounded-xl border border-primary/10 bg-white p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+<div class="rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined icon-filled">local_activity</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900">Accès Prioritaire</h3>
+<p class="text-sm text-slate-600 mt-1">Billetterie en avant-première pour nos rencontres auteurs et événements.</p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="flex items-start gap-4 rounded-xl border border-primary/10 bg-white p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+<div class="rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined icon-filled">auto_stories</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900">Contenu Exclusif</h3>
+<p class="text-sm text-slate-600 mt-1">Analyses, critiques détaillées et guides de lecture mensuels.</p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="flex items-start gap-4 rounded-xl border border-primary/10 bg-white p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+<div class="rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined icon-filled">groups</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900">Clubs de Lecture</h3>
+<p class="text-sm text-slate-600 mt-1">Participation illimitée aux groupes de discussion en ligne et physique.</p>
+</div>
+</div>
+<!-- Benefit 4 -->
+<div class="flex items-start gap-4 rounded-xl border border-primary/10 bg-white p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+<div class="rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined icon-filled">card_giftcard</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-900">Box Surprise</h3>
+<p class="text-sm text-slate-600 mt-1">Recevez chaque trimestre une sélection littéraire surprise.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Table (Informational) -->
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+                                Tarifs et options
+                            </h2>
+<div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+<div class="p-6 flex flex-col items-center text-center hover:bg-background-light transition-colors">
+<h3 class="text-lg font-semibold text-slate-900">Mensuel</h3>
+<div class="mt-2 flex items-baseline">
+<span class="text-3xl font-extrabold text-primary">9€</span>
+<span class="ml-1 text-slate-500">/mois</span>
+</div>
+<p class="mt-4 text-sm text-slate-600">Flexible, sans engagement. Idéal pour découvrir le club.</p>
+<ul class="mt-6 space-y-3 text-sm text-slate-600 text-left w-full max-w-xs">
+<li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2 text-lg">check</span> Accès numérique complet</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2 text-lg">check</span> 1 événement/mois</li>
+</ul>
+</div>
+<div class="p-6 flex flex-col items-center text-center bg-primary/5 relative">
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-wider">Populaire</div>
+<h3 class="text-lg font-semibold text-slate-900">Annuel</h3>
+<div class="mt-2 flex items-baseline">
+<span class="text-3xl font-extrabold text-primary">90€</span>
+<span class="ml-1 text-slate-500">/an</span>
+</div>
+<p class="mt-4 text-sm text-slate-600 text-primary font-medium">2 mois offerts ! Engagement sur 12 mois.</p>
+<ul class="mt-6 space-y-3 text-sm text-slate-600 text-left w-full max-w-xs">
+<li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2 text-lg">check</span> Tous les avantages mensuels</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2 text-lg">check</span> Accès illimité événements</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-green-500 mr-2 text-lg">check</span> Badge "Collectionneur"</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Registration Form -->
+<div class="lg:col-span-5">
+<div class="sticky top-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-xl lg:p-8">
+<div class="mb-6 border-b border-slate-100 pb-4">
+<h2 class="text-xl font-bold text-slate-900">Formulaire d'inscription</h2>
+<p class="text-sm text-slate-500 mt-1">Créez votre compte pour commencer.</p>
+</div>
+<form action="#" class="space-y-5" method="POST">
+<!-- Step Indicator -->
+<div class="flex items-center justify-between mb-6 px-1">
+<div class="flex items-center gap-2">
+<span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
+<span class="text-xs font-medium text-primary">Info</span>
+</div>
+<div class="h-0.5 w-8 bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<span class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500">2</span>
+<span class="text-xs font-medium text-slate-500">Plan</span>
+</div>
+<div class="h-0.5 w-8 bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<span class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500">3</span>
+<span class="text-xs font-medium text-slate-500">Paiement</span>
+</div>
+</div>
+<!-- Personal Info Fields -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-1 space-y-1">
+<label class="block text-sm font-medium text-slate-700" for="firstname">Prénom</label>
+<input class="block w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm shadow-sm focus:border-primary focus:ring-primary" id="firstname" name="firstname" placeholder="Jean" type="text"/>
+</div>
+<div class="col-span-1 space-y-1">
+<label class="block text-sm font-medium text-slate-700" for="lastname">Nom</label>
+<input class="block w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm shadow-sm focus:border-primary focus:ring-primary" id="lastname" name="lastname" placeholder="Dupont" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-sm font-medium text-slate-700" for="email">Email</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
+</div>
+<input class="block w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 pl-10 text-sm shadow-sm focus:border-primary focus:ring-primary" id="email" name="email" placeholder="jean.dupont@exemple.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-sm font-medium text-slate-700" for="password">Mot de passe</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+</div>
+<input class="block w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 pl-10 text-sm shadow-sm focus:border-primary focus:ring-primary" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+<p class="text-xs text-slate-500">Au moins 8 caractères.</p>
+</div>
+<!-- Plan Selection in Form -->
+<div class="pt-2">
+<label class="block text-sm font-medium text-slate-700 mb-2">Choisir une formule</label>
+<div class="space-y-2">
+<label class="relative flex cursor-pointer items-center rounded-lg border border-slate-200 p-3 shadow-sm hover:bg-slate-50 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1">
+<input class="h-4 w-4 border-slate-300 text-primary focus:ring-primary" name="plan" type="radio" value="monthly"/>
+<span class="ml-3 flex flex-1 flex-col">
+<span class="block text-sm font-medium text-slate-900">Mensuel - 9€/mois</span>
+<span class="block text-xs text-slate-500">Facturé chaque mois, sans engagement.</span>
+</span>
+</label>
+<label class="relative flex cursor-pointer items-center rounded-lg border border-primary/40 bg-primary/5 p-3 shadow-sm hover:bg-primary/10 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1">
+<input checked="" class="h-4 w-4 border-slate-300 text-primary focus:ring-primary" name="plan" type="radio" value="annual"/>
+<span class="ml-3 flex flex-1 flex-col">
+<span class="block text-sm font-medium text-slate-900">Annuel - 90€/an</span>
+<span class="block text-xs text-primary font-medium">Économisez 18€ (2 mois offerts).</span>
+</span>
+<span class="material-symbols-outlined text-primary text-xl">star</span>
+</label>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex h-5 items-center">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-medium text-slate-700" for="terms">J'accepte les <a class="text-primary hover:underline" href="#">conditions d'utilisation</a></label>
+</div>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
+                                    Confirmer l'adhésion
+                                    <span class="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
+</button>
+<div class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-500">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                                    Paiement sécurisé via Stripe
+                                </div>
+</form>
+</div>
+<!-- Testimonial/Trust Signal small -->
+<div class="mt-6 flex items-center gap-3 rounded-lg bg-white p-4 shadow-sm border border-slate-100">
+<div class="flex -space-x-2">
+<img alt="" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Portrait of a female member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2CACKR4UqePEyMl4j6m1Vm5bjWlhnT2vajOG272lPFiOM2_nlR7qYfMh0miIiKfgtCAbdowgkO1JXJdvG4uqs3QIVdOQrPVVYe37DoGLABw6UhXqtsUHPZLptCpVjGq9MmtGg24qULbY42uXlMxNjMCKr84jyEw2KSgncPQi-rh0hFm-WF9PUg2W8atGcZebfXpFq6ZgOx1ulLz3kV_lcO7WbmA3ZwK6SrE-lPc5_YiKrO0FsEORl_K_DkR-QQ19pxX8qbpGUCnc"/>
+<img alt="" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Portrait of a male member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv13Lwl-59KsyK7PfwDvf69IuULioQYpYHY58h1lcyeOCnB29bYgJKwGlqFMHn09JzWsvaXgyXj7mb9mJxARI72HkaYm8uGO3FHRx4He01nX5CsNK--CnY91F2pXxAhjHJktDCEFVkxGor_tMKOLDl8lOmrmb52qS2ex_ZQZsFoniHNIagk5GPw7GEphChlasYZHj6yIskU0-8Po1gtFQVUKQPGnxntqfviDD_cLZ_vQ9TfZcrNAHev5yMKnSd_sKJAJxcdKmSvpg"/>
+<img alt="" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Portrait of another male member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ9XypyGk-nr7L6rQ45cHwNfUAzBm-F9KJP02M9PVMn9Oqq7urLFQFTXuqWIySaEskX4WHyM3TiCVXBPvcltfXZMXLcg3uthiiOYfN05iVhPsoo3rVRHW4hZw1d1xX9ihnSjh_FjX2Jy6yhX9mKFluUcZylw1EJ0I_lLW3vAGIx2WTMDqDYxdQy2haK9gijTrInb51wXpt2xMdm89fzrLQ5NBbHdB25o7jZRWF7Vgd9EnPjQ8dkXskcPn5U58U0D6SLN9kFP5CyEg"/>
+</div>
+<p class="text-xs font-medium text-slate-600">Rejoignez <strong>Julie, Marc</strong> et 5000+ autres passionnés.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 border-t border-slate-200 bg-white py-10">
+<div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+<p class="text-sm text-slate-500">© 2023 Book Club. Tous droits réservés.</p>
+<div class="mt-4 flex justify-center space-x-6">
+<a class="text-slate-400 hover:text-primary" href="accueil.html">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-slate-400 hover:text-primary" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-2.37 6.307a5.626 5.626 0 100 11.252 5.626 5.626 0 000-11.252zm0 9.172a3.546 3.546 0 110-7.092 3.546 3.546 0 010 7.092zm8.39-9.983a1.268 1.268 0 11-2.535 0 1.268 1.268 0 012.535 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

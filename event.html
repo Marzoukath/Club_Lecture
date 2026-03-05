@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Événements et Calendrier - Club de Lecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9731d",
+                        "primary-content": "#ffffff",
+                        "primary-light": "#e8b075",
+                        "primary-dark": "#9a5610",
+                        "secondary": "#8da399", // Soft sage green
+                        "secondary-light": "#e3e9e6",
+                        "background-light": "#fbfaf8",
+                        "background-dark": "#211911",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d231a",
+                        "text-main": "#1b140e",
+                        "text-muted": "#957350",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.75rem", 
+                        "xl": "1rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-slate-100 font-display transition-colors duration-200">
+<!-- Top Navbar (Modified slightly for theme consistency) -->
+<div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden border-b border-[#f3ede8] dark:border-surface-dark">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap px-4 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">auto_stories</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Book Club</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="accueil.html">Accueil</a>
+<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Livres</a>
+<a class="text-primary font-bold text-sm leading-normal" href="event.html">Événements</a>
+<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Blog</a>
+<a class="text-text-main dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="proposclub.html">À propos</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-muted flex border-none bg-[#f3ede8] dark:bg-surface-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f3ede8] dark:bg-surface-dark focus:border-none h-full placeholder:text-text-muted px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Rechercher..." value=""/>
+</div>
+</label>
+<button onclick="window.location.href='devenir_membre.html'" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Rejoindre</span>
+</button>
+<button class="md:hidden text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+</div>
+</div>
+</div>
+</div>
+<main class="flex flex-col items-center justify-center w-full px-4 md:px-10 lg:px-40 py-8">
+<div class="w-full max-w-[1280px]">
+<!-- Hero Section -->
+<div class="relative w-full rounded-2xl overflow-hidden min-h-[400px] flex items-center justify-center mb-12 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Open book on a wooden table with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBPlDNA81KwB03W0tOxdX6LLU9zeDJSAUPBu5EGBhr-RJKfJLyYvHUJ5ZZFRicLx2g9SaZYhNr3GfVSORhZTpjb8XHs5GuwXfyj39Y8scPAVa5qd_Qui__CYqKaE2BQkR5JzGt89DfBGtVjiTq__DU76l_2bSHK5LTL4xVXk0Kzj9p6mjkmiAKn-MjUEHesBbS5riFRyzUbf0S-Wo0ZvfEVQ3HUtzunGS5BI2BLyhMkyWVCSX5AjjL0-8NvZ0XCsV8IMMtTxluUL4');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+<div class="relative z-10 text-center px-4 max-w-3xl">
+<h1 class="text-white text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-md">
+                        Calendrier des événements
+                    </h1>
+<p class="text-white/90 text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto drop-shadow-sm">
+                        Rejoignez-nous pour nos prochaines discussions littéraires, rencontres d'auteurs et ateliers d'écriture. Partagez votre passion dans une ambiance chaleureuse.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2">
+<span class="material-symbols-outlined">calendar_month</span>
+                            Voir le programme
+                        </button>
+<button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-lg font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">history</span>
+                            Événements passés
+                        </button>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+<div class="flex overflow-x-auto pb-2 md:pb-0 gap-3 w-full md:w-auto scrollbar-hide">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">view_module</span>
+                        Tous
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-text-main dark:text-gray-200 rounded-full text-sm font-medium transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px] text-secondary">calendar_today</span>
+                        Ce mois-ci
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-text-main dark:text-gray-200 rounded-full text-sm font-medium transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px] text-secondary">book</span>
+                        Fiction
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-text-main dark:text-gray-200 rounded-full text-sm font-medium transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px] text-secondary">menu_book</span>
+                        Non-fiction
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-text-main dark:text-gray-200 rounded-full text-sm font-medium transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px] text-secondary">public</span>
+                        En ligne
+                    </button>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+<span class="hidden sm:inline">Trier par:</span>
+<select class="bg-transparent border-none font-bold text-primary focus:ring-0 cursor-pointer p-0 pr-8">
+<option>Date (croissant)</option>
+<option>Date (décroissant)</option>
+<option>Popularité</option>
+</select>
+</div>
+</div>
+<!-- Upcoming Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+<!-- Event Card 1 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Book cover art for L'Étranger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Abstract art representing existentialism" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAmr34t_fxKQjEWTbjyQqYv_9DPA4Rlt-ei8Qb-jOh2ubvHe5_l-dXRwOlys9JVaEf-AEHsrLA-SUAapU09zmDfORftS-A31YM3nh6jRQHelx7zMPrTuEuCbXUhCdonuyt1NTRpmxneIVfTL3G0XpdjnAnTlJ2xpa0H48GU2BkH4dKLRjy9a4YTY6ZR4H0YSK5sS5q2lYeKl0Bko02pfqzLdf0LugvnsY25cq3M3I-zW2yEKRGQoc_xq41x6fqr5obODIQXHQM9YY"/>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                            Populaire
+                        </div>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Classique</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">15 Oct • 19:00</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                5/12 places
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">L'Étranger - Albert Camus</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Discussion sur l'existentialisme et l'absurde autour d'un café chaud. Préparez vos questions !</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="truncate">Café de Flore, Paris</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                                S'inscrire
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Greek mythology statue representing Circe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Statue of a greek goddess" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWwd1E1eQu7bQ5wbp6pypXxSf3tIr1B_lee6nxmW7WCaIodD65Tp55Gij6oJQ2r_hIu9fe3GQUGBoqpQZPl0Qj_XPJoqbI8ovszrpP0WhNtYvwdK9zIl7U34h-Vp0gFewrPyumxASykCVMe5ACn9qhr6lS6KknA2AUVgnZTm1_oxmBM1O3WPu48tsr18ap4FvqNohXFbXK05e1XGhftCTlXBHBabZfwwflfTG3gVnHzuxf-tE-3qTvjcIt_EI92bYv4qbfZdYl4Zc"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Mythologie</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">22 Nov • 18:30</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                12/20 places
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Circe - Madeline Miller</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Une réinvention audacieuse de l'odyssée d'une déesse. Une soirée dédiée au pouvoir féminin.</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="truncate">Bibliothèque Nationale, Paris</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                                S'inscrire
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Desert landscape representing Dune" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sand dunes under a starry sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkMkLLnfJKdEM_oeQIYyhkYw6Zml2PDjHUEy9vwfv9UsmATNRICX0IsgUIoPdAsoFP6Hckv9wXuT-wSYIWSLbI76XUOTEONn3Hnc7BcxUDtbuo5bB2ZpJmIDBnmwZGeZ0wbsQCFNctwK0yfmq4v0e1Krjr3aamEoTcG0_-8YpOgYS3IOfLUXvSKzrdiUsn18WfUJ3yAB1vud4cGlKzfiZQwnHLHMEhKv0F__qqy97YV0WLLItTvPZ-3c5dWB2QlY-MXt818I-7zfU"/>
+<div class="absolute top-4 right-4 bg-secondary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                            En ligne
+                        </div>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Sci-Fi</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">10 Dec • 19:00</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                Illimité
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Dune - Frank Herbert</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Plongez dans l'univers complexe d'Arrakis. Discussion ouverte sur la politique et l'écologie.</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">laptop_chromebook</span>
+<span class="truncate">Zoom (Lien envoyé par email)</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                                S'inscrire
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Colorful abstract cover art" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Abstract colorful book stack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGzCE95kR9BQwRcXM1qle31F6RgL8wKjeHXWR9YZQvt4MdlJ0HC2LUCaBJaVIQqYDD8t2YCm-F-1XYgc7M2yNM3apReDzSg55DnWhBDKzCcObXmGXg1l7E2R6fCZEExVV3knJQYbY8IfXk2pfMz8UXadmqrEvjxwckyX7M891B0ZPWGHXNJUQuFOLLo4Ua-_QEd2E5ylkAncyS4lPZ-GZaiezXFC-fvBOGzsLtcTwLz0VQpucj-rAmztyTW5xxUI9awsqSgIwda0s"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Poésie</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">18 Dec • 20:00</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                8/15 places
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Milk and Honey - Rupi Kaur</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Soirée lecture de poésie contemporaine. Venez partager vos poèmes préférés.</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="truncate">Le Café des Mots, Lyon</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                                S'inscrire
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 5 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Clean white minimalist book setup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist book on white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXUc0wgZsReLVDlApvBddQfAEmHpM9GhPz5U6em2ddDZJSsvnLR00Y2UffFqNuFl_A-MAI53KmVf70vSl88p6bHFazE5eWFzX8E639myEcNiSNQWXv4HvC9dO7RqPpbwbQ_9lxP1K9LuIg3zaiqnWO6MuywC6oyBfHLidPFVSHwlN62YJ5GFjAsCIuS3f-8z6DQd-by_hyRr7tqF34jbsJiwnWqJgdFqhjcMcms5antKfsg80OELbRbhYsXAIRI3s6XnLUPna4pd4"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Développement Personnel</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">05 Jan • 10:00</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                25/30 places
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Atomic Habits - James Clear</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Commencez l'année avec de bonnes habitudes. Atelier pratique et échange d'expériences.</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="truncate">Coworking Central, Paris</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                                S'inscrire
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 6 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+<div class="relative h-64 overflow-hidden">
+<img alt="Mysterious dark book cover vibes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Dark moody library atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArS0MplD-sFw-F-xyqyLVyuPBrUyPGAt2EwKFazfGRfx6PGp6p3_URDEsPx1JuCm0Hs3ExtxHONv3oZm3kv6pDH4QNh5l1H5QKDtpGwZ37Ez2mpREAZeWwzesbBvZUkJziEc3y_VzB3uc4GEdPLmxvW9v0s9IHgWTY80oFFa9hai0XauXKZhvA_Rc-T44YfoohpXFgwJ8AIYo8j8Ll6gsLyo14YVhYr90ycpoxYYxUn5T6N41TGvn_PoMIigLJ0RZe9UWNZEVBCL8"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+<span class="inline-block bg-secondary text-white text-xs px-2 py-1 rounded-md font-medium mb-1">Thriller</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="text-primary font-bold text-sm tracking-wide uppercase">12 Jan • 21:00</div>
+<div class="flex items-center text-text-muted text-xs gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                Complet
+                            </div>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Gone Girl - Gillian Flynn</h3>
+<p class="text-text-muted text-sm mb-4 line-clamp-2">Une analyse des relations toxiques et des narrateurs non fiables. Âmes sensibles s'abstenir.</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">videocam</span>
+<span class="truncate">Zoom (Lien envoyé par email)</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold text-sm cursor-not-allowed flex items-center justify-center gap-2" disabled="">
+                                Complet
+                                <span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Past Events Gallery Section -->
+<div class="mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div>
+<h2 class="text-3xl font-bold text-text-main dark:text-white mb-2">Souvenirs de nos dernières rencontres</h2>
+<p class="text-text-muted">Revivez les moments forts partagés par notre communauté.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1 group" href="#">
+                        Voir toute la galerie
+                        <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+<!-- Gallery Item 1 (Large) -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl">
+<img alt="Group of friends laughing at a book club meeting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Friends laughing together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRJdJbw-K0AaYsecoo3y4P7LaesulibldrQxbGgiSzekKd3aUnk9gCHmI0u7PV5LELa9_H7Xi-4gn-u49U9oEBRDQ8AA22AGJ1u1pKGkg3STOJfjTItyzIVfkFurrFV0ehNA6IcMyU3Wagdtpuiy2Q89YvG8nkbQh21lS93K_r6YpB6ZzZQG--c29uISIYoiiTa9QDKpK5_qM9phwzcG2USjz_sK6oE86Jb54rSblmkR-uYbqrbIYjcqWun2nSUski6VhAUwdRxAc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div>
+<p class="text-white font-bold text-lg">Rencontre "1984"</p>
+<p class="text-gray-300 text-sm">Juillet 2023 • Bordeaux</p>
+</div>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img alt="Hands holding open books" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Open book close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIzKrdFN6viaQAcuJHOb--hifh0ZOvkEDjotubUeufZQkk4mY_zsm8kTyhdmYDj7NhOsPSs83zGNgxa5e91yT98vIou1xFczSE3ogcqgOoVPbGnOGk5j8UlkbrvoZrxiJAYqyg8qaBFFZLyuwWJCI_r4Hp1PNEh0VypfHuQcCm0KgwCP4S0heSaGU4C3rljumOn30ZC8qbBlLs7ExnFBUGwrBIqlymYo63V5-kd_zalkFS_CuhpRilSxuu3W-NVPLrHhN1xX93NlY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">favorite</span>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img alt="Coffee cup and glasses on a book page" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Coffee and glasses on book" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK5Vzn0B5I9L9cY0PoRNlHgvyFF7FczEQI6TGn3-7rFAakDxlriSbL9UEppBGDtW_6dtwJv9aVDuo5NW08ugm6e907SaTvow6E96K6A66Omkzt6hVrY9bUCrhCvV4OSMogzPgOLSNZVN7pE8wFCdY4VDOjyB6G1tZEpDUcTCj5yPQg_SAjomKmkDMTU8tZZXY_5HqZMF1INDK-rZ3r1XfocS6fKpldgd6JBUxPVLBg6cL1YCd_fEc4pw1ijcJ0KLdUuNJeP03bUfE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">visibility</span>
+</div>
+</div>
+<!-- Gallery Item 4 -->
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img alt="Warm cozy library interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Cozy library interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQGlmBZWfSE40Z1m0_y1lfMbyE4VNCVGipvzeC2JXNcgWmW_9VO43Owq0lf8rY2NFEa2Qa4w4WDiSzbILeURrLqcddOB55iU5EI_ZjRIi-U0QA42Le2VjTHvV4Q5UAjkgtXLNvgEw0bQsCrmsFeQC_Xo-2Key1aKmfCTqVug0lsqGOy9Jwzv-5rciHzbKZWHe868Ozqtzbvy0iG0U-JbZqZQvUiLZjjqCe4LG353lbU765uRP0ErC2EzNtR65Uvz_9N2e7p0sLrAQ"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">location_on</span>
+</div>
+</div>
+<!-- Gallery Item 5 -->
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-xl">
+<img alt="Stack of vintage books" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stack of old books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAzc-nOIIBRjUgSg0tne2NDDoiB4lo_G8TfoewnsR0HFLHGNmRcaIzjretCX_UNLxvecIDm9-dQPIAEWufDg3nQKj6DIVohKUgcI-1W-jMpceMYbU0TXkbgKSE6CbWtTHhQWyxX9Wd_TtOHcc3X6H1gdat1bM2K0JziklMkZTatZAn7Bae8Gv8B4VL5bxq1N3-KbjGkbERwBdrqcUSY7EiaEsAJH4CQJHFeL7tcxXUrWOoCkujslWn3BkfSpxrvbQYJG1Fa7h1UOc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter CTA -->
+<div class="bg-[#2d231a] rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex-1 relative z-10 text-center md:text-left">
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Ne manquez jamais une rencontre</h3>
+<p class="text-gray-300 text-lg">Inscrivez-vous à notre newsletter pour recevoir le calendrier mensuel et les votes pour les prochains livres.</p>
+</div>
+<div class="w-full md:w-auto min-w-[300px] relative z-10">
+<form class="flex flex-col gap-3">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="votre@email.com" type="email"/>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary-light text-white font-bold rounded-lg transition-colors shadow-lg" type="button">
+                            S'inscrire
+                        </button>
+</form>
+<p class="text-gray-500 text-xs mt-3 text-center">Pas de spam, promis. Désinscription à tout moment.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f3ede8] dark:border-surface-dark py-12">
+<div class="layout-container px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="max-w-[1280px] w-full flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+<span class="font-bold text-lg">Book Club</span>
+</div>
+<div class="text-text-muted text-sm">
+                    © 2023 Book Club. Tous droits réservés.
+                </div>
+<div class="flex gap-6">
+<a class="text-text-muted hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-text-muted hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a> <!-- Instagram approx -->
+<a class="text-text-muted hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a> <!-- Twitter approx -->
+</div>
+</div>
+</div>
+</footer>
+</body></html>
